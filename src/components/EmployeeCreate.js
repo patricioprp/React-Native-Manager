@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Picker, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { employeeUpdate } from '../actions';
 import { Card, CardSection, Button, Input } from './common';
@@ -26,8 +27,21 @@ class EmployeeCreate extends Component {
           />
         </CardSection>
 
-        <CardSection>
-          <Input />
+        <CardSection style={{ flexDirection:'column' }}>
+          <Text style={styles.pickerTextStyle}>Shift</Text>
+          <Picker
+          style={{ flex:1 }}
+          selectedValue={this.props.shift}
+          onValueChange={value => {this.props.employeeUpdate({prop:'shift',value})}}
+          >
+              <Picker.Item label="Lunes" value="Lunes" />
+              <Picker.Item label="Martes" value="Martes" />
+              <Picker.Item label="Miercoles" value="Miercoles" />
+              <Picker.Item label="Jueves" value="Jueves" />
+              <Picker.Item label="Viernes" value="Viernes" />
+              <Picker.Item label="Sabado" value="Sabado" />
+              <Picker.Item label="Domingo" value="Domingo" />
+          </Picker>
         </CardSection>
 
         <CardSection>
@@ -38,6 +52,12 @@ class EmployeeCreate extends Component {
   }
 }
 
+const styles = {
+  pickerTextStyle:{
+    fontSize:18,
+    paddingLeft:20
+  }
+};
 const mapStateToProps = (employeeFromReducer) =>{
     const { name, phone, shift } = employeeFromReducer;
 
