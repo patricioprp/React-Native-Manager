@@ -58,7 +58,7 @@ const styles = {
     paddingLeft:20
   }
 };
-const mapStateToProps = (employeeFromReducer) =>{
+const mapStateToProps = ({employeeFromReducer}) =>{
     const { name, phone, shift } = employeeFromReducer;
 
     return { name, phone, shift};
