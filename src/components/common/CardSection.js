@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View } from "react-native";
 
 const CardSection = props => {
-  return <View style={styles.containerStyles}>{props.children}</View>;
+  return <View style={[styles.containerStyles]}>{props.children}</View>;
 };
 const styles = {
   containerStyles: {
