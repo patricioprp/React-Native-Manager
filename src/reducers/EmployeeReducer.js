@@ -1,13 +1,13 @@
 import {
-    EMPLOYEESS_FETCH_SUCCESS
+    EMPLOYEE_FETCH_SUCEESS
 } from '../actions/types';
 
 const INITIAL_STATE = {};
 
 export default (state=INITIAL_STATE,action) => {
     switch (action.type) {
-        case EMPLOYEESS_FETCH_SUCCESS:
-        console.log(action);
+        case EMPLOYEE_FETCH_SUCEESS:
+        console.log('soy el reducer',action);
         return action.payload;
         default:
         return state;
